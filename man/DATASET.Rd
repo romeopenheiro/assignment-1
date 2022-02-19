@@ -3,7 +3,7 @@
 \docType{data}
 \name{DATASET}
 \alias{DATASET}
-\title{Data of nominal brown shrimp prices by size}
+\title{Data of Digital Word Recognition by Howes and Solomon}
 \format{
 A tibble with 12,240 rows and 11 variables:
 \describe{
@@ -24,6 +24,6 @@ A tibble with 12,240 rows and 11 variables:
 DATASET
 }
 \description{
-Shrimp are classified by size, 0-15 shrimp per pound, 15-20 shrimp per pound, etc. A smaller number per pound indicates larger shrimp. Nominal prices are total monthly value of brown shrimp andings within size class divided by total monthly landings within the size class.
+The package provides a tidy and clean dataset that can be used for Assignment 1 of the course CGSC 5901/4900 X Special Topics in Cognitive Science: Advanced Statistics for Cognitive Science.
 }
 \keyword{datasets}
