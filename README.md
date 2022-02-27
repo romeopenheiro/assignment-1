@@ -21,10 +21,43 @@ You can install the development version of assignment1 from
 devtools::install_github("romeopenheiro/assignment-1")
 ```
 
+## Data
+
+Everything related to the dataset generated can be found in the
+following directory structure
+
+``` bash
+├── DESCRIPTION
+├── LICENSE
+├── LICENSE.md
+├── NAMESPACE
+├── R
+│   ├── DATASET.R
+│   ├── assignment1-package.R
+│   └── utils-pipe.R
+├── README.Rmd
+├── README.md
+├── assignment1.Rproj
+├── data
+│   └── DATASET.rda
+├── data-raw
+├── inst
+│   └── rmarkdown
+│       └── templates
+│           └── assignment_template
+│               ├── skeleton
+│               │   └── skeleton.Rmd
+│               └── template.yaml
+└── man
+    ├── DATASET.Rd
+    ├── assignment1-package.Rd
+    └── pipe.Rd
+```
+
 ## Usage
 
-The dataset is a tibble with 12,240 rows and 11 variables. A description
-of the variables is provided below.
+The dataset is a tibble with 12,240 rows and 11 variables. A glimpse of
+the variables is provided below.
 
 ``` r
 library(assignment1)
@@ -44,23 +77,33 @@ tibble::glimpse(DATASET)
 #> $ OS          <chr> "Win32", "Win32", "Win32", "Win32", "Win32", "Win32", "Win…
 ```
 
-Here is a sample of the rows.
+Here is a random sample of 6 rows.
 
 ``` r
-dplyr::slice_sample(DATASET)
-#>   subject age gender trial_index    strings freq resp_keys resp_corr resp_rt
-#> 1     101  19 female          49 altruistic    1         w         1   1.046
+dplyr::slice_sample(DATASET, n = 6)
+#>   subject age gender trial_index     strings freq resp_keys resp_corr resp_rt
+#> 1      52  19 female          56    rebuttal    2         w         1  1.1349
+#> 2      17  21 female          73    letarery   78         n         1  0.9357
+#> 3      74  19 female          38     elegies    1         n         0  0.6851
+#> 4      22  25 female          57 percipience    1         w         1  0.7520
+#> 5      99  19 female         117 percopoence    1         n         1  2.4682
+#> 6      88  20 female           0   assiduous    1         n         0  0.8026
 #>   corrans       OS
-#> 1       w MacIntel
+#> 1       w    Win32
+#> 2       n    Win32
+#> 3       w    Win32
+#> 4       w MacIntel
+#> 5       n    Win32
+#> 6       w MacIntel
 ```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
 
 ## Example
 
 An example of the usage of the package can be seen by following this
 [link](https://github.com/romeopenheiro/CGSC5901/tree/main/assignment_1).
+
+## License
+
+This project is licensed under the MIT License - see the
+[LICENSE.md](https://github.com/romeopenheiro/assignment-1/blob/main/LICENSE.md)
+file for details.
